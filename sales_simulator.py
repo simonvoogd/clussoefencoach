@@ -1,6 +1,7 @@
 import json
 import streamlit as st
 import openai
+st.write(f"OpenAI library version: {openai.__version__}")
 
 # OpenAI API-sleutel instellen
 openai.api_key = st.secrets["OPENAI_API_KEY"]
