@@ -3,7 +3,6 @@ import streamlit as st
 import openai
 
 # OpenAI API-sleutel instellen
-import streamlit as st
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 st.title("CLUSS-oefencoach")
