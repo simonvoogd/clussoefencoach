@@ -34,7 +34,7 @@ if st.button("Start gesprek"):
     """
     
     response = openai.ChatCompletion.create(
-        model="gpt-4",
+        model="gpt-3.5-turbo",
         messages=[{"role": "system", "content": "Je bent een CLUSS-coach."},
                   {"role": "user", "content": prompt}]
     )
