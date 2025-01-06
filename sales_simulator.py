@@ -33,7 +33,8 @@ if st.button("Start gesprek"):
     Moeilijkheidsgraad: {moeilijkheidsgraad}
     Begin het gesprek door de virtuele klant zichzelf voor te laten stellen en het gesprek te openen volgens CLUSS.
     """
-    
+    st.write(f"DEBUG - Prompt content: {prompt}")
+
     response = openai.ChatCompletion.create(
       model="gpt-3.5-turbo",  # Of "gpt-4" als beschikbaar
       messages=[
