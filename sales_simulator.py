@@ -1,6 +1,5 @@
 import streamlit as st
 import openai
-import openai.error  # Zorg ervoor dat de error-module correct wordt geïmporteerd
 
 # Controleer de OpenAI-versie (debug)
 st.write(f"OpenAI library version: {openai.__version__}")
@@ -8,7 +7,7 @@ st.write(f"OpenAI library version: {openai.__version__}")
 # OpenAI API-sleutel instellen
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
-st.title("CLUSS-oefencoach - minimale test3!")
+st.title("CLUSS-oefencoach - minimale test4!")
 
 # Maak een voorbeeldaanroep naar de API
 try:
