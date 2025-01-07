@@ -5,19 +5,21 @@ import openai
 # OpenAI API-sleutel instellen
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
-st.title("CLUSS-oefencoach - minimale test9")
+
+st.title("CLUSS-oefencoach - minimale test b")
 
 # Instructies en introductie
-try:
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[
-            {"role": "system", "content": "Je bent een vriendelijke assistent."},
-            {"role": "user", "content": "Wat is het weer vandaag?"}
-        ]
-    )
-    # Show the response in Streamlit
-    st.write(response["choices"][0]["message"]["content"])
+from openai import OpenAI
+client = OpenAI()
 
-except Exception as e:  # General error handling
-    st.error(f"Er trad een fout op: {str(e)}")
+def get_completion(prompt, client_instance, model="gpt-3.5-turbo"):
+  messages = [{"role": "user", "content": prompt}]
+  response = client_instance.chat.completions.create(
+  model=model,
+  messages=messages,
+  max_tokens=50,
+  temperature=0,
+  )
+  return response.choices[0].message["content"]
+
+get_completion(prompt, client) # call your function
