@@ -8,7 +8,7 @@ st.write(f"OpenAI library version: {openai.__version__}")
 # OpenAI API-sleutel instellen
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
-st.title("CLUSS-oefencoach - minimale test!")
+st.title("CLUSS-oefencoach - minimale test3!")
 
 # Maak een voorbeeldaanroep naar de API
 try:
