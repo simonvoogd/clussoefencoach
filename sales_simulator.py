@@ -5,10 +5,9 @@ import openai
 # OpenAI API-sleutel instellen
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
-st.title("CLUSS-oefencoach - minimale test")
+st.title("CLUSS-oefencoach - minimale test!")
 
 # Instructies en introductie
-
 response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     messages=[
