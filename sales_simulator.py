@@ -4,6 +4,7 @@ import openai
 
 # OpenAI API-sleutel instellen
 openai.api_key = st.secrets["OPENAI_API_KEY"]
+st.write(f"OpenAI library version: {openai.__version__}")
 
 st.title("CLUSS-oefencoach - minimale test!")
 
