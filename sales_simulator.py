@@ -6,7 +6,7 @@ import openai
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 
-st.title("CLUSS-oefencoach - minimale test b")
+st.title("CLUSS-oefencoach - minimale test c")
 
 # Instructies en introductie
 from openai import OpenAI
@@ -23,7 +23,3 @@ def get_completion(prompt, client_instance, model="gpt-3.5-turbo"):
   return response.choices[0].message["content"]
 
 get_completion(prompt, client) # call your function
-
-
-#except Exception as e:  # General error handling
-#    st.error(f"Er trad een fout op: {str(e)}")
