@@ -1,6 +1,6 @@
 import streamlit as st
 import openai
-from openai.error import OpenAIError, RateLimitError, AuthenticationError  # Specifieke fouten importeren
+print(dir(openai.error))
 
 # Controleer de OpenAI-versie (debug)
 st.write(f"OpenAI library version: {openai.__version__}")
@@ -8,7 +8,7 @@ st.write(f"OpenAI library version: {openai.__version__}")
 # OpenAI API-sleutel instellen
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
-st.title("CLUSS-oefencoach - minimale test5!")
+st.title("CLUSS-oefencoach - minimale test6!")
 
 # Maak een voorbeeldaanroep naar de API
 try:
