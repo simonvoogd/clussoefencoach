@@ -8,18 +8,14 @@ openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 st.title("CLUSS-oefencoach - minimale test c")
 
-# Instructies en introductie
 from openai import OpenAI
+
 client = OpenAI()
 
-def get_completion(prompt, client_instance, model="gpt-3.5-turbo"):
-  messages = [{"role": "user", "content": prompt}]
-  response = client_instance.chat.completions.create(
-      model=model,
-      messages=messages,
-      max_tokens=50,
-      temperature=0,
-  )
-  return response.choices[0].message["content"]
-
-get_completion(prompt, client) # call your function
+completion = client.completions.create(
+    model='gpt-3.5-turbo',
+    prompt='hey, bro\n\n',
+     ...)
+print(completion.choices[0].text)
+print(dict(completion).get('usage'))
+print(completion.model_dump_json(indent=2))
