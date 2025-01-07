@@ -12,11 +12,11 @@ st.title("CLUSS-oefencoach - minimale test8!")
 # Maak een voorbeeldaanroep naar de API
 try:
     response = openai.chat.completions.create(
-    model="gpt-3.5-turbo",
-        messages=[
-            {"role": "system", "content": "Je bent een vriendelijke assistent."},
-            {"role": "user", "content": "Wat is het weer vandaag?"}
-        ]
+        model="gpt-3.5-turbo",
+            messages=[
+                {"role": "system", "content": "Je bent een vriendelijke assistent."},
+                {"role": "user", "content": "Wat is het weer vandaag?"}
+            ]
     )
     # Toon het antwoord van de GPT in Streamlit
     st.write(response["choices"][0]["message"]["content"])
