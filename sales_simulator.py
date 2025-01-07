@@ -1,6 +1,5 @@
 import streamlit as st
 import openai
-print(dir(openai.error))
 
 # Controleer de OpenAI-versie (debug)
 st.write(f"OpenAI library version: {openai.__version__}")
@@ -8,7 +7,7 @@ st.write(f"OpenAI library version: {openai.__version__}")
 # OpenAI API-sleutel instellen
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
-st.title("CLUSS-oefencoach - minimale test6!")
+st.title("CLUSS-oefencoach - minimale test7!")
 
 # Maak een voorbeeldaanroep naar de API
 try:
@@ -22,9 +21,5 @@ try:
     # Toon het antwoord van de GPT in Streamlit
     st.write(response["choices"][0]["message"]["content"])
 
-except RateLimitError:
-    st.error("Je hebt je API-quota overschreden. Controleer je OpenAI-account.")
-except AuthenticationError:
-    st.error("Er is een probleem met je API-sleutel. Controleer je Streamlit Secrets.")
-except OpenAIError as e:
-    st.error(f"Er trad een algemene fout op: {str(e)}")
+except Exception as e:  # Algemene foutafhandeling
+    st.error(f"Er trad een fout op: {str(e)}")
