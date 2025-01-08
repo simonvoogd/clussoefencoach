@@ -9,7 +9,7 @@ st.title("CLUSS-oefencoach - minimale test e")
 
 # Maak een API-aanroep
 response = openai.ChatCompletion.create(
-    model='gpt-3.5-turbo',
+    model='gpt-4o',
     messages=[
         {"role": "system", "content": "Je bent een vriendelijke assistent."},
         {"role": "user", "content": "Hey, bro"}
