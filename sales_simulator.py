@@ -5,18 +5,17 @@ import openai
 # OpenAI API-sleutel instellen
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
+st.title("CLUSS-oefencoach - minimale test e")
 
-st.title("CLUSS-oefencoach - minimale test nav openai docu")
-
-from openai import OpenAI
-client = OpenAI()
-
-completion = client.chat.completions.create(
-  model="gpt-4o-mini",
-  messages=[
-    {"role": "developer", "content": "You are a helpful assistant."},
-    {"role": "user", "content": "Hello!"}
-  ]
+# Maak een API-aanroep
+response = openai.ChatCompletion.create(
+    model='gpt-3.5-turbo',
+    messages=[
+        {"role": "system", "content": "Je bent een vriendelijke assistent."},
+        {"role": "user", "content": "Hey, bro"}
+    ]
 )
 
-print(completion.choices[0].message)
+# Toon resultaten
+print(response['choices'][0]['message']['content'])
+print(response.get('usage'))  # Laat het gebruik zien (tokens)
